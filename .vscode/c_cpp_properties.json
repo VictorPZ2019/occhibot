@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/horus/ws_horus/devel/include",
+        "/opt/ros/melodic/include",
+        "/home/horus/ws_horus/src/ddynamic_reconfigure/include",
+        "/home/horus/ws_horus/src/horus/horus_description/include",
+        "/home/horus/ws_horus/src/occhibot/include",
+        "/home/horus/ws_horus/src/realsense-ros/realsense2_camera/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}

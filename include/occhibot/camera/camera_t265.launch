@@ -1,0 +1,12 @@
+<launch>
+   <include file="$(find realsense2_camera)/launch/rs_t265.launch"/>
+
+   <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_t265cam" args="0 0.0254 0.1778 0 0 0 /base_link /t265_cam"/>
+
+   <!--<node pkg"tf2_ros" type="static_transfom_publisher" name="base_to_t265cam" args="0 0.0254 0.1778 0 0 0 /base_link/camera_pose_frame"/>-->
+   <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find realsense2_camera)/rviz/t265.rviz" required="true" /> -->
+
+   <!--Falta los parametros de la camara para cuando se active en vriz-->
+
+
+</launch>

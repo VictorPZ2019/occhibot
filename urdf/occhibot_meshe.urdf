@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<robot name="horus">
+	<link name="base_link">
+		<visual>
+			<geometry>
+            <mesh filename="package://occhibot/meshes/Base_link.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="white">
+				<color rgba="1 1 1 1"/>
+			</material>
+		</visual>
+	</link>
+
+	
+
+	<link name="wheel_1">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05969"/>
+			</geometry>
+			<origin rpy="0 1.57 0" xyz="0.13 0.13843 0"/>
+			<material name="black">
+				<color rgba="0 0 0 1"/>
+			</material>
+		</visual>
+	</link>
+
+	<link name="wheel_2">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05969"/>
+			</geometry>
+			<origin rpy="0 1.57 0" xyz="-0.13 0.13843 0"/>
+			<material name="black"/>
+		</visual>
+	</link>
+
+	<link name="wheel_3">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05969"/>
+			</geometry>
+			<origin rpy="0 1.57 0" xyz="0.13 -0.13843 0"/>
+			<material name="black"/>
+		</visual>
+	</link>
+
+	<link name="wheel_4">
+		<visual>
+			<geometry>
+				<cylinder length="0.02" radius="0.05969"/>
+			</geometry>
+			<origin rpy="0 1.57 0" xyz="-0.13 -0.13843 0"/>
+			<material name="black"/>
+		</visual>
+	</link>
+
+	  <!-- Accesorios -->
+
+	<link name="link_2">
+		<visual>
+			<geometry>
+            <mesh filename="package://occhibot/meshes/link2.stl"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 -0.0212244 0.103505"/>
+			<origin rpy="0 0 0" xyz="0 0.0508 0.1778"/>
+			<material name="white">
+			</material>
+		</visual>
+	</link>
+
+	<link name="t265_cam">
+		<visual>
+			<geometry>
+            <box size="0.108 0.0125 0.0245"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0.0254 0.1778"/>
+			<material name="black">
+			</material>
+		</visual>
+	</link>
+
+	<link name="D415_cam">
+		<visual>
+			<geometry>
+            <box size="0.099 0.023 0.020"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0.0254 0.2159"/>
+			<material name="black">
+			</material>
+		</visual>
+	</link>
+
+
+
+
+          <!-- Accesorios End-->
+
+	<joint name="base_to_wheel1" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel_1"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+	<joint name="base_to_wheel2" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel_2"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+	<joint name="base_to_wheel3" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel_3"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+	<joint name="base_to_wheel4" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel_4"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+
+	<joint name="base_to_link2" type="fixed">
+		<parent link="base_link"/>
+		<child link="link_2"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+	<joint name="base_to_t265cam" type="fixed">
+		<parent link="base_link"/>
+		<child link="t265_cam"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+	<joint name="base_to_D415cam" type="fixed">
+		<parent link="base_link"/>
+		<child link="D415_cam"/>
+		<origin xyz="0 0 0"/>
+	</joint>
+
+
+
+</robot>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
