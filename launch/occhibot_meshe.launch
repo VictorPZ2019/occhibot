@@ -1,6 +1,7 @@
 <launch>
-  <!--prueba de la camara con la base del robot-->
+  <!--prueba de la camara con la base del robot   <include file="$(find occhibot)/launch/include/camera/camera_t265.launch"/> -->
   
+ 
 
   <arg name="model" default="$(find occhibot)/urdf/occhibot_meshe.urdf"/>
   <arg name="gui" default="true" />
