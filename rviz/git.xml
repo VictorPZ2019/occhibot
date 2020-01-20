@@ -1,0 +1,80 @@
+horus@horus-desktop:~$ v
+validlocale              viewres                  visudo
+vcstime                  vigr                     vmstat
+vdir                     vim                      volname
+verify-uselistorder-6.0  vim.basic                vstp
+veritysetup              vimdiff                  vulkaninfo
+vi                       vimdot                   vulkan-smoketest
+view                     vimtutor                 
+view_frames              vipw                     
+horus@horus-desktop:~$ code-oss 
+horus@horus-desktop:~$ roscd occhibot/
+occhibot/include/  occhibot/meshes/   occhibot/rviz/     occhibot/teensy/
+occhibot/launch/   occhibot/param/    occhibot/src/      occhibot/urdf/
+horus@horus-desktop:~$ roscd occhibot/
+horus@horus-desktop:~/ws_horus/src/occhibot$ git re
+rebase         remote         replace        reset          
+reflog         repack         request-pull   revert         
+horus@horus-desktop:~/ws_horus/src/occhibot$ git remote 
+origin
+horus@horus-desktop:~/ws_horus/src/occhibot$ git remote -v
+origin	https://github.com/VictorPZ2019/occhibot.git (fetch)
+origin	https://github.com/VictorPZ2019/occhibot.git (push)
+horus@horus-desktop:~/ws_horus/src/occhibot$ git branch --all
+* master
+  remotes/origin/master
+  remotes/origin/vp
+horus@horus-desktop:~/ws_horus/src/occhibot$ git push origin master
+Username for 'https://github.com': VictorPZ2019
+Password for 'https://VictorPZ2019@github.com': 
+Everything up-to-date
+horus@horus-desktop:~/ws_horus/src/occhibot$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    include/bringup.launch
+	new file:   include/occhi_base.h
+	renamed:    include/occhibot/camera.launch -> launch/include/camera.launch
+	renamed:    include/occhibot/camera/camera_t265.launch -> launch/include/camera/camera_t265.launch
+	modified:   launch/occhibot_meshe.launch
+	new file:   src/occhi_base.cpp
+	new file:   src/occhi_base_node.cpp
+	new file:   teensy/firmware/firmware.ini
+
+horus@horus-desktop:~/ws_horus/src/occhibot$ git log
+commit fd83d6623ce74513302c6a0b53034c9e3628d197 (HEAD -> master, origin/master)
+Author: HORUS <vitinpz@gmail.com>
+Date:   Mon Jan 13 17:13:43 2020 -0500
+
+    Inicio 2019-1
+
+commit 63464557b686561a7559eec84f92e22d2354917c
+Author: HORUS <vitinpz@gmail.com>
+Date:   Mon Jan 13 15:24:25 2020 -0500
+
+    fist commit
+horus@horus-desktop:~/ws_horus/src/occhibot$ git commit -m "base"
+[master 81e3af3] base
+ 8 files changed, 11 insertions(+), 8 deletions(-)
+ delete mode 100644 include/bringup.launch
+ create mode 100644 include/occhi_base.h
+ rename {include/occhibot => launch/include}/camera.launch (55%)
+ rename {include/occhibot => launch/include}/camera/camera_t265.launch (98%)
+ create mode 100644 src/occhi_base.cpp
+ create mode 100644 src/occhi_base_node.cpp
+ create mode 100644 teensy/firmware/firmware.ini
+horus@horus-desktop:~/ws_horus/src/occhibot$ git push
+Username for 'https://github.com': VictorPZ2019
+Password for 'https://VictorPZ2019@github.com': 
+Counting objects: 14, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (14/14), 1.42 KiB | 242.00 KiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/VictorPZ2019/occhibot.git
+   fd83d66..81e3af3  master -> master
+horus@horus-desktop:~/ws_horus/src/occhibot$ 
