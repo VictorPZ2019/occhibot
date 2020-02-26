@@ -1,0 +1,21 @@
+<launch>
+    <arg name="model" default="$(find occhibot)/urdf/occhibot.urdf"/>
+    <arg name="gui" default="true" />
+    <arg name="rvizconfig" default="$(find occhibot)/rviz/urdf.rviz" />
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+    <param name="use_gui" value="$(arg gui)"/>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Publish static transform from base_footprint to base_link -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_to_odom" args="0 0 0.05 0 0 0 /base_footprint /camera_odom_frame"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.05 0 0 0 /base_footprint /base_link"/>
+
+
+    <!-- Run occhibot t265 drivers -->
+     <include file="$(find occhibot)/launch/include/camera.launch" />
+
+
+</launch>

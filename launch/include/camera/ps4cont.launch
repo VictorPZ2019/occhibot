@@ -1,0 +1,13 @@
+<launch>
+    <!-- Inicia la comunicasion de ros entre la jetson nano y occhibot base tenssy-->
+    <node pkg="rosserial_python" name="rosserial_occhi" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/ttyACM0"/>
+        <param name="baud" value="57600" />
+    </node>
+
+
+    <!--<node pkg="occhibot" name="driver_teleop_key" type="driver_teleop_key" output="screen"></node> -->
+    <!--include file="$(find ps4_ros)/launch/ps4.launch" /-->
+
+
+</launch>

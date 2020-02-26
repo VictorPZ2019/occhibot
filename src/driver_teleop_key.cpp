@@ -17,7 +17,7 @@ class RobotDriver
     {
         nh_ = nh;
 
-        cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/base_controller/command", 1);
+        cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("cmd_vel", 100);
     }
 
     bool driveKeyboard()
@@ -37,29 +37,29 @@ class RobotDriver
                std::cout << "unknowm command:" << cmd << "\n";
                continue;
            }
-           base_cmd.linear.x = base_cmd.linear.y = base_cmd.linear.z = 0;
+           base_cmd.linear.x = base_cmd.linear.y = base_cmd.linear.x = 0;
            // Avanzar
            if(cmd[0]=='w'){
-               base_cmd.linear.x =0.25;
-               base_cmd.linear.y =0;
+               base_cmd.linear.x =0;
+               base_cmd.linear.y =00.25;
                base_cmd.angular.z =0;
            }
            // Retroceder
            else if(cmd[0]=='s'){
-               base_cmd.linear.x =-0.25;
-               base_cmd.linear.y =0;
+               base_cmd.linear.x =0;
+               base_cmd.linear.y =-0.25;
                base_cmd.angular.z =0;
            }
            // Gire a la izquierda (guiñada) y avance al mismo tiempo
            else if(cmd[0]=='a'){
-                base_cmd.linear.x =0.25;
-                base_cmd.linear.y =0;
+                base_cmd.linear.x =0;
+                base_cmd.linear.y =0.25;
                 base_cmd.angular.z =0.75;
             }
            // Gire a la derecha (guiñada) y avance al mismo tiempo
            else if(cmd[0]=='d'){
-                base_cmd.linear.x =0.25;
-                base_cmd.linear.y =0;
+                base_cmd.linear.x =0;
+                base_cmd.linear.y =0.25;
                 base_cmd.angular.z =-0.75;
             }
            // Parar

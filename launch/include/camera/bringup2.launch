@@ -5,15 +5,14 @@
         <param name="baud" value="57600" />
     </node>
 
-    <!-- Publish occhibot odometry -->
-    <node pkg="occhibot" name="driver_teleop_key" type="driver_teleop_key" output="screen"></node>
-
     <!-- Publish static transform from base_footprint to base_link -->
-    <node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.200 0 0 0 /base_footprint /camera_link "/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.098 0 0 0  /base_footprint /base_link"/>
 
 
     <!-- Run occhibot t265 drivers -->
-     <include file="$(find occhibot)/launch/include/camera/camera_t265.launch" />
+     <include file="$(find ps4_ros)/launch/ps4.launch" />
+     <!-- Run occhibot t265 drivers -->
+     <include file="$(find occhibot)/launch/include/camera/camera_t265.launch" /> 
 
 
 </launch>

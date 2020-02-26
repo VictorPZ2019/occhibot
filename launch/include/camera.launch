@@ -1,6 +1,6 @@
 <launch>
-   <include file="$(find occhibot)/launch/include/camara/camera_t265.launch"/>
+   <include file="$(find occhibot)/launch/include/camera/camera_t265.launch"/>
 
-   <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_t265cam" args="0 0.0254 0.1778 0 0 0 /base_link/ t265cam"/>
+   <node pkg="tf2_ros" type="static_transform_publisher" name="base_to_t265cam" args="0 0.115 0.215 0 0 0 /base_link /camera_link"/>
     <!-- hola mundo-->
 </launch>
